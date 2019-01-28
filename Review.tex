@@ -1,0 +1,16 @@
+\section{Review of useful concepts and Introduction}
+\subsection{Multivariate Gaussian}
+%$\sigma =$ covariance matrix, $\mu$ = mean\\
+$f(x) = \frac{1}{2\pi \sqrt{|\Sigma|}} e^{- \frac{1}{2} (x-\mu)^T \Sigma^{-1} (x-\mu)}$
+
+Suppose we have a Gaussian random vector $X_V \sim N(\mu_V, \Sigma_{VV})$.\\
+Suppose we take two disjoint subsets of V: $A={i_1,...,i_k}$ and $B={j_1,...,j_m}$.\\
+Then, the conditional distribution: \\
+$P(X_A|X_B=x_B)=N(\mu_{A|B}, \Sigma_{A|B})$ is Gaussian:\\
+$\mu_{A|B}=\mu_A+\Sigma_{AB}\Sigma^{-1}_{BB}(x_B-\mu_B)$\\
+$\Sigma_{A|B}=\Sigma_{AA}-\Sigma_{AB}\Sigma^{-1}_{BB}\Sigma_{BA}$
+
+\subsection{Convex / Jensen's inequality}
+$\text{g(x) is convex} \Leftrightarrow x_1,x_2 \in \mathbb{R}, \lambda \in [0,1]: g''(x) > 0$\\
+$g(\lambda x_1 + (1-\lambda) x_2) \leq \lambda g(x_1) + (1-\lambda) g(x_2)$
+$\varphi(\operatorname{E}[X]) \leq  \operatorname{E}[\varphi(X)]$
